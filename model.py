@@ -208,11 +208,23 @@ def run_one_epoch(state, X_train, y_train, X_val, y_val, lr, patience):
     state['val_losses'].append(val_loss)
     return state
 
-# Step 17 - train_batch_gd (not yet solved)
-# TODO: implement
+# Step 17 - train_batch_gd
+def train_batch_gd(X_train, y_train, X_val, y_val, lr, epochs, patience, seed=None):
+    # TODO: Train weights with full-batch GD for up to epochs, with early stopping.
+    _, n_features = X_train.shape
+    state = init_training_state(n_features, seed=seed)
+    for _ in range(epochs):
+        state = run_one_epoch(state, X_train, y_train, X_val, y_val, lr, patience)
+        if state['stopped'] is True:
+            break
+    
+    return state['best_weights'], state['train_losses'], state['val_losses']
 
-# Step 18 - mean_absolute_error (not yet solved)
-# TODO: implement
+# Step 18 - mean_absolute_error
+def mean_absolute_error(y_true, y_pred):
+    # TODO: Compute the mean absolute error between true targets and predictions
+    residual = y_true - y_pred
+    return np.mean(np.abs(residual))
 
 # Step 19 - root_mean_squared_error (not yet solved)
 # TODO: implement
