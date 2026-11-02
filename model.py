@@ -79,8 +79,11 @@ def predict_linear(X, weights):
     # TODO: Return the predicted target vector from X and weights
     return X @ weights
 
-# Step 8 - mse_loss (not yet solved)
-# TODO: implement
+# Step 8 - mse_loss
+def mse_loss(y_true, y_pred):
+    # TODO: Return the average of squared residuals as a scalar float.
+    residuals = y_true - y_pred
+    return np.mean(residuals ** 2)
 
 # Step 9 - mse_gradient (not yet solved)
 # TODO: implement
