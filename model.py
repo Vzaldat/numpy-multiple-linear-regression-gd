@@ -99,8 +99,16 @@ def normal_equation(X, y):
     b = X.T @ y
     return np.linalg.solve(A, b)
 
-# Step 11 - initialize_weights (not yet solved)
-# TODO: implement
+# Step 11 - initialize_weights
+def initialize_weights(n_features, seed=None):
+    # TODO: Return (n_features,) weights sampled from N(0, 0.01)
+    if seed != None:
+        np.random.seed(seed)
+        weights = np.random.normal(0, 0.01, n_features)
+    else:
+        weights = np.random.normal(0, 0.01, n_features)
+    
+    return weights
 
 # Step 12 - gd_step (not yet solved)
 # TODO: implement
