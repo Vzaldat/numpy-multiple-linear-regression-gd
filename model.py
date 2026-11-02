@@ -312,6 +312,8 @@ def score_lr_model(model, X, y):
     preds = predict_lr_model(model, X)
     return evaluate_regression(y, preds)
 
-# Step 28 - compare_with_normal_equation (not yet solved)
-# TODO: implement
+# Step 28 - compare_with_normal_equation
+def compare_with_normal_equation(model):
+    # TODO: Return the L2 distance between GD and normal-equation weights.
+    return weights_l2_distance(model['weights'], model['normal_weights'])
 
