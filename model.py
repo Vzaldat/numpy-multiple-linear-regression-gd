@@ -226,8 +226,11 @@ def mean_absolute_error(y_true, y_pred):
     residual = y_true - y_pred
     return np.mean(np.abs(residual))
 
-# Step 19 - root_mean_squared_error (not yet solved)
-# TODO: implement
+# Step 19 - root_mean_squared_error
+def root_mean_squared_error(y_true, y_pred):
+    # TODO: Return the root mean squared error between y_true and y_pred.
+    residual = y_pred - y_true
+    return np.sqrt(np.mean(residual ** 2))
 
 # Step 20 - r_squared (not yet solved)
 # TODO: implement
