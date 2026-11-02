@@ -85,8 +85,12 @@ def mse_loss(y_true, y_pred):
     residuals = y_pred - y_true
     return np.mean(residuals ** 2)
 
-# Step 9 - mse_gradient (not yet solved)
-# TODO: implement
+# Step 9 - mse_gradient
+def mse_gradient(X, y_true, y_pred):
+    # TODO: Return the analytic MSE gradient w.r.t. weights: (2/n) X^T (y_pred - y_true)
+    n, _ = X.shape
+    residual = y_pred - y_true
+    return (2 / n) * X.T @ residual
 
 # Step 10 - normal_equation (not yet solved)
 # TODO: implement
